@@ -75,67 +75,188 @@ header .icons .fa-search {
     max-width: 700px;
 }
 
+/* infoAndUpNext */
+.infoAndUpNext {
+    display: flex;
+    flex-direction: column;
+}
+
 /* Video Info */
-.info {
+.infoAndUpNext > .info {
     padding: var(--padding);
 }
 
-.info .metadata .hashtags {
+.infoAndUpNext .info .metadata .hashtags {
     display: flex;
     font-size: var(--font-small);
     color: var(--blue-color);
 }
 
-.info .metadata .hashtags li {
+.infoAndUpNext .info .metadata .hashtags li {
     margin-right: var(--padding);
 }
 
-.info .metadata .titleAndButton {
+.infoAndUpNext .info .metadata .titleAndButton {
     display: flex;
 }
 
-.info .metadata .titleAndButton .title {
+.infoAndUpNext .info .metadata .titleAndButton .title {
     font-size: var(--font-medium);
+    margin-right: var(--padding);
+}
+
+.infoAndUpNext .info .metadata .titleAndButton .title.clamp {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
     overflow: hidden;
-    margin-right: var(--padding);
 }
 
-.info .metadata .titleAndButton .moreBtn {
+.infoAndUpNext .info .metadata .titleAndButton .moreBtn {
     height: 100%;
+    background-color: var(--white-color);
+    transform: rotate(0deg);
+    transition: transform 400ms ease-in-out;
 }
 
-.info .metadata .views {
+.infoAndUpNext .info .metadata .titleAndButton .moreBtn.clicked {
+    transform: rotate(180deg);
+    transition: transform 400ms ease-in-out;
+}
+
+.infoAndUpNext .info .metadata .views {
     color: var(--grey-dark-color);
     font-size: var(--font-small);
 }
 
-.info .actions {
+.infoAndUpNext .info .actions {
     display: flex;
     justify-content: space-around;
     margin: var(--padding);
 }
 
-.info .actions button {
+.infoAndUpNext .info .actions button {
     display: flex;
     flex-direction: column;
     font-size: var(--font-small);
     color: var(--grey-dark-color);
+    background-color: var(--white-color);
 }
 
-.info .actions button i {
+.infoAndUpNext .info .actions button i {
     margin: 0 auto;
     margin-bottom: calc(var(--padding) / 2);
     font-size: 16px;
 }
 
-.info .actions button i.active {
+.infoAndUpNext .info .actions button i.active {
     color: var(--blue-color);
 }
 
 /* Channel Description */
-.channel {
+.infoAndUpNext .channel {
     display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--grey-light-color);
+    border-bottom: 1px solid var(--grey-light-color);
+}
+
+.infoAndUpNext .channel .subscribe {
+    font-size: var(--font-medium);
+}
+
+.infoAndUpNext .channel .metadata {
+    display: flex;
+    align-items: center;
+    margin: calc(var(--padding)/2);
+}
+
+.infoAndUpNext .channel .metadata img {
+    width: var(--avatar-size);
+    height: var(--avatar-size);
+    border-radius: 50%;
+}
+
+.infoAndUpNext .channel .metadata .info {
+    display: flex;
+    flex-direction: column;
+    padding-left: calc(var(--padding)/2);
+}
+
+.infoAndUpNext .channel .metadata .info .name {
+    font-size: var(--font-medium);
+}
+
+.infoAndUpNext .channel .metadata .info .subscribers {
+    font-size: var(--font-small);
+    color: var(--grey-dark-color);
+}
+
+.infoAndUpNext .channel .subscribe {
+    /* text-transform: uppercase; */
+    color: var(--red-color);
+    font-size: var(--font-medium);
+    /* margin: calc(var(--padding)/2); */
+    margin: var(--padding);
+    padding: calc(var(--padding)/2);
+    background-color: var(--grey-light-color);
+    border: 1px solid var(--grey-dark-color);
+    border-radius: 10%;
+}
+
+/* UpNext */
+.infoAndUpNext .upNext {
+    padding: 0 var(--padding);
+}
+
+.infoAndUpNext .upNext > .title {
+    font-size: var(--font-medium);
+    color: var(--grey-dark-color);
+    margin-bottom: calc(var(--padding)/2);
+}
+
+.infoAndUpNext .upNext .item {
+    display: flex;
+    margin-top: var(--padding);
+}
+
+.infoAndUpNext .upNext .item .img {
+    flex: 1 1 35%;
+    margin-right: var(--padding);
+}
+
+.infoAndUpNext .upNext .item .img img {
+    width: 100%;
+}
+
+.infoAndUpNext .upNext .item .info {
+    flex: 1 1 60%;
+    min-width: 75%;
+    max-width: 20%;
+}
+
+.infoAndUpNext .upNext .item .moreBtn {
+    height: 100%;
+    flex: 1 1 5%;
+}
+
+.infoAndUpNext .upNext .item .info {
+    display: flex;
+    flex-direction: column;
+}
+
+.infoAndUpNext .upNext .item .info .title {
+    font-size: var(--font-small);
+}
+
+.infoAndUpNext .upNext .item .info .name,
+.infoAndUpNext .upNext .item .info .views {
+    font-size: var(--font-micro)
+}
+
+@media screen and (min-width: 768px) {
+    .infoAndUpNext {
+        flex-direction: row;
+        margin: var(--padding) 0;
+    }
 }
